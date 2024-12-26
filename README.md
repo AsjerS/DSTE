@@ -1,5 +1,7 @@
 # DSTE - De Skeere Text Editor
 
+### **WARNING**: THIS PROJECT IS NOT FINISHED BUT I DECIDED TO MAKE A GITHUB PAGE FOR IT BECAUSE I HAD NOTHING TO DO, THE PROJECT FILES ARE PROBABLY NOT HERE YET
+
 ## Introduction
 
 De Skeere Text Editor (English: The Crappy Text Editor) is a text editor written in HTML made to be fully usable without internet. It's made for people that can't have professional editors like Notepad++ because they have a device managed by someone else, like a school.
