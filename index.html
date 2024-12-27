@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DSTE</title>
+<link rel="icon" href="icon.svg">
+<link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+<div id="header">
+  <input type="text" id="filename" placeholder="filename.txt">
+  
+  <div class="save-btn-wrapper">
+    <button class="btn" id="save_btn" onclick="save_file()">
+      <svg class="btn_svg" id="save_btn_svg" height="24px" viewBox="0 -960 960 960" width="24px">
+        <path d="M840-683v503q0 24-18 42t-42 18H180q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h503l157 157Zm-60 27L656-780H180v600h600v-476ZM479.76-245q43.24 0 73.74-30.26 30.5-30.27 30.5-73.5 0-43.24-30.26-73.74-30.27-30.5-73.5-30.5-43.24 0-73.74 30.26-30.5 30.27-30.5 73.5 0 43.24 30.26 73.74 30.27 30.5 73.5 30.5ZM233-584h358v-143H233v143Zm-53-72v476-600 124Z" />
+      </svg>
+    </button>
+    <svg class="floppy-drive-container" height="30px" viewBox="0 -960 960 960" width="30px">
+      <path d="M587.79-216q15.21 0 25.71-10.29t10.5-25.5q0-15.21-10.29-25.71t-25.5-10.5q-15.21 0-25.71 10.29t-10.5 25.5q0 15.21 10.29 25.71t25.5 10.5Zm96 0q15.21 0 25.71-10.29t10.5-25.5q0-15.21-10.29-25.71t-25.5-10.5q-15.21 0-25.71 10.29t-10.5 25.5q0 15.21 10.29 25.71t25.5 10.5ZM144-432v-360q0-30 21.15-51T216-864h528q29.7 0 50.85 21.15Q816-821.7 816-792v360h-72v-360H216v360h-72Zm72 72v192h528v-192H216Zm0 264q-29.7 0-50.85-21.15Q144-138.3 144-168v-264h672v264q0 29.7-21.15 50.85Q773.7-96 744-96H216Zm0-336h528-528Zm0 72h528-528Z" />
+    </svg>
+  </div>
+
+  <button class="btn" id="load_btn" onclick="load_file()">
+    <svg class="btn_svg" id="load_btn_svg" height="24px" viewBox="0 -960 960 960" width="24px">
+      <path d="M220-80q-24 0-42-18t-18-42v-680q0-24 18-42t42-18h340l240 240v270h-60v-230H520v-220H220v680h410v60H220Zm658 1L750-207v125h-60v-228h228v60H792l128 128-42 43Zm-658-61v-680 680Z"/>
+    </svg>
+  </button>
+
+  <button class="btn" id="settings_btn" onclick="open_settings()">
+    <svg class="btn_svg" id="settings_btn_svg" height="24px" viewBox="0 -960 960 960" width="24px">
+      <path d="m388-80-20-126q-19-7-40-19t-37-25l-118 54-93-164 108-79q-2-9-2.5-20.5T185-480q0-9 .5-20.5T188-521L80-600l93-164 118 54q16-13 37-25t40-18l20-127h184l20 126q19 7 40.5 18.5T669-710l118-54 93 164-108 77q2 10 2.5 21.5t.5 21.5q0 10-.5 21t-2.5 21l108 78-93 164-118-54q-16 13-36.5 25.5T592-206L572-80H388Zm48-60h88l14-112q33-8 62.5-25t53.5-41l106 46 40-72-94-69q4-17 6.5-33.5T715-480q0-17-2-33.5t-7-33.5l94-69-40-72-106 46q-23-26-52-43.5T538-708l-14-112h-88l-14 112q-34 7-63.5 24T306-642l-106-46-40 72 94 69q-4 17-6.5 33.5T245-480q0 17 2.5 33.5T254-413l-94 69 40 72 106-46q24 24 53.5 41t62.5 25l14 112Zm44-210q54 0 92-38t38-92q0-54-38-92t-92-38q-54 0-92 38t-38 92q0 54 38 92t92 38Zm0-130Z"/>
+    </svg>
+  </button>
+</div>
+
+<textarea id="doc" placeholder="Start typing..."></textarea>
+
+<div id="settings" style="display: none">
+  <h1>Settings</h1>
+
+  <h2>Theme</h2>
+  <p>
+    <div class="setRow">
+      <label for="text-col">Text colour:</label>
+      <div class="custom-color-picker">
+        <input class="set hidden-color-picker" type="color" id="text-col" onchange="set_text_col(event.target.value)">
+        <div class="color-display" id="text-display"></div>
+      </div>
+    </div>
+    <div class="setRow">
+      <label for="bg-col">Background colour:</label>
+      <div class="custom-color-picker">
+        <input class="set hidden-color-picker" type="color" id="bg-col" onchange="set_bg_col(event.target.value)">
+        <div class="color-display" id="bg-display"></div>
+      </div>
+    </div>
+    <div class="setRow">
+      <label for="accent-col">Accent colour:</label>
+      <div class="custom-color-picker">
+        <input class="set hidden-color-picker" type="color" id="accent-col" onchange="set_accent_col(event.target.value)">
+        <div class="color-display" id="accent-display"></div>
+      </div>
+    </div>
+  </p>
+
+  <h2>Font</h2>
+  <div class="setRow">
+    <label for="font">Typeface: </label>
+    <select class="set" id="font" onchange="change_font(event)">
+      <optgroup label="WEB SAFE">
+        <option class="font" value="Arial">Arial</option>
+        <option class="font" value="Verdana">Verdana</option>
+        <option class="font" value="Tahoma">Tahoma</option>
+        <option class="font" value="Trebuchet MS">Trebuchet MS</option>
+        <option class="font" value="Times New Roman">Times New Roman</option>
+        <option class="font" value="Georgia">Georgia</option>
+        <option class="font" value="Garamond">Garamond</option>
+        <option class="font" value="Courier New">Courier New</option>
+        <option class="font" value="Brush Script MT">Brush Script MT</option>
+      </optgroup>
+      <optgroup label="NOT SAFE">
+        <option class="font" value="Fira Code">Fira Code</option>
+        <option class="font" value="Noto Sans">Noto Sans</option>
+        <option class="font" value="Noto Serif">Noto Serif</option>
+        <option class="font" value="Noto Mono">Noto Mono</option>
+      </optgroup>
+    </select>
+  </div>
+  <div class="setRow">
+    <label for="font-size">Font size: </label>
+    <input class="set" type="number" id="font-size" size="1" onchange="set_font_size(event.target.value)"><input class="setSlider" id="font-size" type="range" min="6" max="24" value=set_font_size onchange="set_font_size(event.target.value)">
+  </div>
+
+  <h2>Textarea</h2>
+  <div class="setRow">
+    <label for="tabBehaviour">Tab behaviour: </label>
+    <select class="set" id="tabBehaviour" onchange="tabBehaviorCustom(event)">
+        <option value="&Tab;">Tab Character</option>
+        <option value="  ">2 Spaces</option>
+        <option value="    ">4 Spaces</option>
+        <option value="      ">6 Spaces</option>
+        <option value="        ">8 Spaces</option>
+        <option value="custom">Custom</option>
+    </select>
+  </div>
+  <div class="setRow" id="tabBehaviourOtherBool" style="display: none;">
+    <label for="tabBehaviorCustomPremium">Custom tab behaviour: </label>
+    <input class="set" id="tabBehaviorCustomPremium" type="text">
+  </div>
+  <div class="setRow">
+    <label for="textareaWidth">Textarea width: </label>
+    <select class="set" id="textareaWidth" onchange="set_textarea_width(event)">
+      <optgroup label="Percentages">
+        <option value="100%">Full (100%)</option>
+        <option value="80%">Large (80%)</option>
+        <option value="60%">Medium (60%)</option>
+        <option value="40%">Small (40%)</option>
+      </optgroup>
+      <optgroup label="Pixels">
+        <option value="2160px">2160 Pixels</option>
+        <option value="1440px">1440 Pixels</option>
+        <option value="1080px">1080 Pixels</option>
+        <option value="720px">720 Pixels</option>
+        <option value="480px">480 Pixels</option>
+      </optgroup>
+    </select>
+  </div>
+  <div class="setRow">
+    <label for="lineWrapping">Line wrapping: </label>
+    <input class="set" id="lineWrapping" type="checkbox" checked onchange="toggleLineWrapping(event)">
+  </div>
+</div>
+
+<script src="defaults.js"></script>
+<script src="script.js"></script>
+<script src="shortcuts.js"></script>
+</body>
+</html>
