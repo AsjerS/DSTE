@@ -6,6 +6,10 @@ De Skeere Text Editor (English: The Crappy Text Editor) is a text editor written
 
 The editor is also made to be highly customizable, with customizable theme colours, font sizes, tab behaviour, fonts, and even a website icon that changes colours.
 
+## Demo
+
+You can test this applicatino without installing anything [here](https://asjers.github.io/DSTE/). This is just as a demo though, and it might not support all the features.
+
 ## Setup & Installation
 
 Download the folder called `DSTE` from this Github page, and open the `index.html` file to use the application. It should open the program in a browser by default.
