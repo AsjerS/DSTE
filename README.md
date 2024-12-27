@@ -1,7 +1,5 @@
 # DSTE - De Skeere Text Editor
 
-### **WARNING**: THIS PROJECT IS NOT FINISHED BUT I DECIDED TO MAKE A GITHUB PAGE FOR IT BECAUSE I HAD NOTHING TO DO, THE PROJECT FILES ARE PROBABLY NOT HERE YET
-
 ## Introduction
 
 De Skeere Text Editor (English: The Crappy Text Editor) is a text editor written in HTML made to be fully usable without internet. It's made for people that can't have professional editors like Notepad++ because they have a device managed by someone else, like a school.
@@ -18,6 +16,7 @@ Download the folder called `DSTE` from this Github page, and open the `index.htm
 |---------------------------|----------------------|
 | Decrease font size        | ctrl + [             |
 | Increase font size        | ctrl + ]             |
+| Reset font size           | ctrl + \             |
 | Save file                 | ctrl + s             |
 | Load/open file            | ctrl + o             |
 | Edit settings/preferences | ctrl + ,<br>ctrl + p |
@@ -26,12 +25,40 @@ Download the folder called `DSTE` from this Github page, and open the `index.htm
 
 ### Themes
 
-In the `themes.js` file, you can change the values for all the default colours used in the application by changing the hex colour values for each variable.
+In the `defaults.js` file, you can change some default values like theme colours and font styling. You can experiment with how colours will look in the settings menu in the application.
 
 ### Shortcuts
 
-In the `shortcuts.js` file, you can add your own shortcuts to the app, or change what key does what. This is a bit harder than changing the theme though, as this is not just a configuration file, but also contains code that calls functions from the main `script.js` file.
+In the `shortcuts.js` file, you can add your own shortcuts to the app, or change what key does what. Here's how a shortcut code snippet should be made, with comments (pieces that shouldn't be in the actual code) marked with [/ comment /]:
+
+```
+...
+else if (event.ctrlKey [/ use event.shiftKey and/or event.altKey if you want shift and/or alt respectively /] && event.key === 'a' [/ the key to use in combination with the initiator key(s) /]) {
+    event.preventDefault();
+    open_settings();; [/ here can be put the action you want the shortcut to do /]
+  }
+...
+```
 
 ### Fonts
 
-In the `fonts` folder, you can add your the font files you'd like to be able to select. For this to work, you need to add the font file to the `style.css` file, including what type it is (we usually use `.ttf` files, which are of the `truetype` type), and afterwards, you need to add an option to select your new font in the HTML document under the settings menu. There should be a category in there called `WEBSAFE` and `NOT SAFE`, and I'd recommend putting your new font under the `NOT SAFE` category.
+In the `fonts` folder, you can add your the font files you'd like to be able to select. To do this, you'll first need to add something like this at the top of the `main.css` file (comments are marked with [/ comment /]):
+
+```
+@font-face {
+  font-family: 'My Font'; [/ put the name of your font here /]
+  src: url('./fonts/theFilenameOfMyFont.ttf') format('truetype'); [/ put a link to the font here - the example suggests that the font is in the ./fonts folder /]
+}
+```
+
+<br>
+
+Afterwards, you need to add your font as a selectable option in the `index.html` file, at around line number 85, preferrably under `<optgroup label="NOT SAFE">`. Here's what that looks like:
+
+```
+<option class="font" value="My Font">My Font</option>
+```
+
+<br>
+
+If you want to set the font as the default font, you can change the line `"font": "Noto Mono",` in `defaults.js` to your own font.
