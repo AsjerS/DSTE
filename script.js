@@ -183,10 +183,10 @@ document.getElementById('doc').addEventListener('keydown', (event) => {
         "html": "<!DOCTYPE html>\n<html>\n<head>\n\n</head>\n<body>\n\n</body>\n</html>",
         "\\l": "\u2190",
         "<-": "\u2190",
-        "<--": "\u2190",
+        "\\u": "\u2191",
         "\\r": "\u2192",
         "->": "\u2192",
-        "-->": "\u2192"
+        "\\d": "\u2193"
       }
 
       for (key in tablet) {
