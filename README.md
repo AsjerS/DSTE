@@ -18,7 +18,7 @@ You can test this applicatino without installing anything [here](https://asjers.
 
 ## Setup & Installation
 
-Download [DSTE-Local](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/AsjerS/DSTE/tree/main/DSTE-Local), unzip it, and open the `index.html` file to use the application. It should open the program in your default browser.
+Download [the DSTE package](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/AsjerS/DSTE/tree/main/package), unzip it, and open the `index.html` file to use the application. It should open the program in your default browser.
 
 ## Shortcut guide
 
