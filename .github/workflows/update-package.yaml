@@ -1,0 +1,32 @@
+name: Update Package Folder
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  update-package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      # Clean old package
+      - run: rm -rf package && mkdir package
+
+      # Copy required files
+      - run: |
+          cp -r fonts package/
+          cp index.html package/
+          cp defaults.js package/
+          icon.svg package/
+          main.css package/
+          script.js package/
+          shortcuts.js package/
+
+      # Commit package update
+      - name: Commit package update
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add package
+          git commit -m "Update package folder" || echo "No changes to commit"
+          git push
