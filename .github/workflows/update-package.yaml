@@ -17,10 +17,10 @@ jobs:
           cp -r fonts package/
           cp index.html package/
           cp defaults.js package/
-          icon.svg package/
-          main.css package/
-          script.js package/
-          shortcuts.js package/
+          cp icon.svg package/
+          cp main.css package/
+          cp script.js package/
+          cp shortcuts.js package/
 
       # Commit package update
       - name: Commit package update
