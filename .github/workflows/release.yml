@@ -16,11 +16,7 @@ jobs:
     - uses: actions/checkout@v7
 
     - name: Prepare Standalone Files
-      run: |
-        mkdir dste
-        cp -r fonts dste/
-        cp index.html defaults.js main.css script.js shortcuts.js dste/
-        zip -r DSTE.zip dste
+      run: git archive --format=zip -o DSTE.zip HEAD
 
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v3
