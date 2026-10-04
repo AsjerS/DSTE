@@ -1,0 +1,29 @@
+name: Package and Release
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version number to release (major.minor.patch)'
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v7
+
+    - name: Prepare Standalone Files
+      run: |
+        mkdir dste
+        cp -r fonts dste/
+        cp index.html defaults.js main.css script.js shortcuts.js dste/
+        zip -r DSTE.zip dste
+
+    - name: Create GitHub Release
+      uses: softprops/action-gh-release@v3
+      with:
+        files: DSTE.zip
+        generate_release_notes: true
