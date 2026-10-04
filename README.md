@@ -1,5 +1,11 @@
 # DSTE
 
+## Installation
+
+To install, download [the latest release here](https://github.com/AsjerS/DSTE/releases/latest/download/DSTE.zip), extract it, and open `index.html` with your browser.
+
+You can try [a web demo here](https://github.com/AsjerS/DSTE/releases/latest/download/DSTE.zip), though it might not support all features.
+
 ## Introduction
 
 DSTE / De Skeere Text Editor (English: The Crappy Text Editor) is a text editor written in HTML made to be fully usable without internet. It's made for people that can't have professional editors like Notepad++ because they have a device managed by someone else, like a school.
@@ -11,14 +17,6 @@ The editor is also made to be highly customizable, with customizable theme colou
 ![Screenshot of the main page of the program running in Firefox on Windows 11](.github/assets/screenshot-main.webp)
 
 ![Screenshot of the settings menu of the program running in Firefox on Windows 11](.github/assets/screenshot-settings.webp)
-
-## Demo
-
-You can test this applicatino without installing anything [here](https://asjers.github.io/DSTE/). This is just as a demo though, and it might not support all the features.
-
-## Setup & Installation
-
-Download [the DSTE package](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/AsjerS/DSTE/tree/main/package), unzip it, and open the `index.html` file to use the application. It should open the program in your default browser.
 
 ## Shortcut guide
 
