@@ -8,9 +8,9 @@ The editor is also made to be highly customizable, with customizable theme colou
 
 ### Screenshots
 
-![Screenshot of the main page of the program running in Firefox on Windows 11](screenshot-main.webp)
+![Screenshot of the main page of the program running in Firefox on Windows 11](.github/assets/screenshot-main.webp)
 
-![Screenshot of the settings menu of the program running in Firefox on Windows 11](screenshot-settings.webp)
+![Screenshot of the settings menu of the program running in Firefox on Windows 11](.github/assets/screenshot-settings.webp)
 
 ## Demo
 
