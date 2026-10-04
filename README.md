@@ -4,7 +4,7 @@
 
 To install, download [the latest release here](https://github.com/AsjerS/DSTE/releases/latest/download/DSTE.zip), extract it, and open `index.html` with your browser.
 
-You can try [a web demo here](https://github.com/AsjerS/DSTE/releases/latest/download/DSTE.zip), though it might not support all features.
+You can try [a web demo here](https://asjers.github.io/DSTE/), though it might not support all features.
 
 ## Introduction
 
